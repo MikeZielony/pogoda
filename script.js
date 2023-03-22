@@ -53,3 +53,60 @@ document
     });
 
 weather.fetchWeather("Krakow");
+
+
+let weather1 = {
+    apiKey: "72e500c3b17f279ba771d0537dcce959",
+    fetchWeather1: function (city1) {
+        fetch(
+            "https://api.openweathermap.org/data/2.5/weather?q=" +
+            city1 +
+            "&units=metric&appid=" +
+            this.apiKey
+        )
+            .then((response) => {
+                if (!response.ok) {
+                    alert("No weather found.");
+                    throw new Error("No weather found.");
+                }
+                return response.json();
+            })
+            .then((data) => this.displayWeather1(data));
+    },
+    displayWeather1: function (data) {
+        const { name } = data;
+        const { icon, description } = data.weather[0];
+        const { temp, humidity } = data.main;
+        const { speed } = data.wind;
+        const { country } = data.sys;
+        document.querySelector(".city1").innerText = "Weather in " + name + " " + country;
+        document.querySelector(".icon1").src =
+            "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".description1").innerText = description;
+        document.querySelector(".temp1").innerText = temp + "°C";
+        document.querySelector(".humidity1").innerText =
+            "Humidity: " + humidity + "%";
+        document.querySelector(".wind1").innerText =
+            "Wind speed: " + speed+ " km/h";
+        document.querySelector(".weather1").classList.remove("loading");
+
+    },
+    search1: function () {
+        this.fetchWeather1(document.querySelector(".search-bar1").value);
+    },
+};
+
+document.querySelector(".search1 button").addEventListener("click", function () {
+    weather1.search1();
+});
+
+document
+    .querySelector(".search-bar1")
+    .addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
+            weather1.search1();
+        }
+    });
+weather1.fetchWeather1("Warszawa");
+
+

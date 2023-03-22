@@ -11,7 +11,7 @@ body {
     font-size: 120%;
 }
 
-.card {
+.card, .card1{
     background: #000000d0;
     color: white;
     padding: 2em;
@@ -21,7 +21,7 @@ body {
     margin: 1em;
 }
 
-.search {
+.search, .search1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +40,7 @@ button {
     transition: 0.2s ease-in-out;
 }
 
-input.search-bar {
+input.search-bar, input.search-bar1{
     border: none;
     outline: none;
     padding: 0.4em 1em;
@@ -56,28 +56,28 @@ button:hover {
     background: #7c7c7c6b;
 }
 
-h1.temp {
+h1.temp, h1.temp1{
     margin: 0;
     margin-bottom: 0.4em;
 }
 
-.flex {
+.flex, .flex1 {
     display: flex;
     align-items: center;
 }
 
-.description {
+.description, .description1 {
     text-transform: capitalize;
     margin-left: 8px;
 }
 
-.weather.loading {
+.weather.loading, .weather1.loading {
     visibility: hidden;
     max-height: 20px;
     position: relative;
 }
 
-.weather.loading:after {
+.weather.loading:after, .weather1.loading {
     visibility: visible;
     content: "Loading...";
     color: white;
