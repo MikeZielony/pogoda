@@ -52,4 +52,4 @@ document
         }
     });
 
-weather.fetchWeather("Cracow");
+weather.fetchWeather("Krakow");
