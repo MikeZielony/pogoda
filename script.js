@@ -29,6 +29,7 @@ let weather = {
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + "°C";
         temps[0] = temp;
+        compare();
         document.querySelector(".humidity").innerText =
             "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText =
@@ -118,11 +119,15 @@ weather1.fetchWeather1("Warszawa");
 
  function compare() {
    // console.log(weather1.fetchWeather1(city))
-     if (temps[0]  < temps[1]) {document.querySelector(".card1").style.background = "red" , document.querySelector(".card").style.background = "blue"} else {
-          document.querySelector(".card").style.background = "red", document.querySelector(".card1").style.background = "blue"
-
-      };
+     if (temps[0]  < temps[1])
+            {
+                document.querySelector(".card1").style.background = "red" , document.querySelector(".card").style.background = "blue";
+            }
+     else if (temps[0]  == temps[1]) {
+         document.querySelector(".card").style.background = "red" , document.querySelector(".card1").style.background = "red";}
+      else  {      document.querySelector(".card").style.background = "red", document.querySelector(".card1").style.background = "blue";
+     };
 console.log(temps[0], temps[1]);
- }
+ };
 
 
