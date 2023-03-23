@@ -19,6 +19,7 @@ body {
     width: 100%;
     max-width: 420px;
     margin: 1em;
+    opacity: 80%;
 }
 
 .search, .search1 {
