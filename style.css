@@ -23,6 +23,12 @@ body {
     backdrop-filter: blur(8px);
 }
 
+#points {
+    color: black;
+    font-size: xxx-large;
+    font-size: 10vw;
+}
+
 .search, .search1 {
     display: flex;
     align-items: center;

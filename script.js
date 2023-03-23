@@ -1,4 +1,5 @@
 const temps = [];
+const points = [-1,-0];
 let weather = {
     apiKey: "72e500c3b17f279ba771d0537dcce959",
     fetchWeather: function (city) {
@@ -55,7 +56,7 @@ document
         }
     });
 
-weather.fetchWeather("Krakow");
+// weather.fetchWeather("Krakow");
 
 
 let weather1 = {
@@ -115,19 +116,26 @@ document
             weather1.search1();
         }
     });
-weather1.fetchWeather1("Warszawa");
+// weather1.fetchWeather1("Krakow");
 
  function compare() {
    // console.log(weather1.fetchWeather1(city))
      if (temps[0]  < temps[1])
             {
                 document.querySelector(".card1").style.background = "red" , document.querySelector(".card").style.background = "blue";
+                points[1] = points[1] +1;
             }
      else if (temps[0]  == temps[1]) {
-         document.querySelector(".card").style.background = "red" , document.querySelector(".card1").style.background = "red";}
+         document.querySelector(".card").style.background = "red" , document.querySelector(".card1").style.background = "red";
+         points[0] = points[0] +1;
+         points[1] = points[1] +1;
+     }
       else  {      document.querySelector(".card").style.background = "red", document.querySelector(".card1").style.background = "blue";
-     };
+         points[0] = points[0] +1;
+      };
 console.log(temps[0], temps[1]);
+     document.getElementById("points").innerHTML = points[0] + " : " + points[1];
+     console.log("punkty lewy : " + points[0] + "    " + " punkty prawy : " + points[1]);
  };
 
 
