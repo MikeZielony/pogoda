@@ -1,3 +1,4 @@
+const temps = [];
 let weather = {
     apiKey: "72e500c3b17f279ba771d0537dcce959",
     fetchWeather: function (city) {
@@ -27,6 +28,7 @@ let weather = {
             "https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + "°C";
+        temps[0] = temp;
         document.querySelector(".humidity").innerText =
             "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText =
@@ -84,10 +86,15 @@ let weather1 = {
             "https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".description1").innerText = description;
         document.querySelector(".temp1").innerText = temp + "°C";
+        temps[1] = temp;
+
+        console.log(temps[1]);
+        console.log(temps);
         document.querySelector(".humidity1").innerText =
             "Humidity: " + humidity + "%";
         document.querySelector(".wind1").innerText =
             "Wind speed: " + speed+ " km/h";
+        compare();
         document.querySelector(".weather1").classList.remove("loading");
 
     },
@@ -108,5 +115,14 @@ document
         }
     });
 weather1.fetchWeather1("Warszawa");
+
+ function compare() {
+   // console.log(weather1.fetchWeather1(city))
+     if (temps[0]  < temps[1]) {document.querySelector(".card1").style.background = "red" , document.querySelector(".card").style.background = "blue"} else {
+          document.querySelector(".card").style.background = "red", document.querySelector(".card1").style.background = "blue"
+
+      };
+console.log(temps[0], temps[1]);
+ }
 
 
