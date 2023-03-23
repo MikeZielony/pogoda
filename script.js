@@ -138,9 +138,11 @@ console.log(temps[0], temps[1]);
      console.log("punkty lewy : " + points[0] + "    " + " punkty prawy : " + points[1]);
      if (points[0] == 5) {
          document.getElementById("points").innerHTML = "Sara WIN!";
+         window.location = 'win.html';
      }
      else if (points[1] == 5) {
          document.getElementById("points").innerHTML = "Róża WIN!";
+         window.location = './win.html';
      }
  };
 
