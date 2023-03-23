@@ -136,6 +136,12 @@ document
 console.log(temps[0], temps[1]);
      document.getElementById("points").innerHTML = points[0] + " : " + points[1];
      console.log("punkty lewy : " + points[0] + "    " + " punkty prawy : " + points[1]);
+     if (points[0] == 5) {
+         document.getElementById("points").innerHTML = "Player left WIN!!!!!";
+     }
+     else if (points[1] == 5) {
+         document.getElementById("points").innerHTML = "Player right WINN !!!!";
+     }
  };
 
 
