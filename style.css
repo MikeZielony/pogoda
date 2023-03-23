@@ -1,6 +1,6 @@
 body {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -14,7 +14,7 @@ body {
 .card, .card1{
     background: #000000d0;
     color: white;
-    padding: 2em;
+    padding: 3em;
     border-radius: 30px;
     width: 100%;
     max-width: 420px;
