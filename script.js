@@ -98,7 +98,8 @@ let weather1 = {
             "Wind speed: " + speed+ " km/h";
         compare();
         document.querySelector(".weather1").classList.remove("loading");
-
+        document.body.style.backgroundImage =
+            "url('https://source.unsplash.com/1600x900/?" + name + "')";
     },
     search1: function () {
         this.fetchWeather1(document.querySelector(".search-bar1").value);
